@@ -1,0 +1,122 @@
+/* html Seite 1*/
+
+body {
+    display: flex;
+    flex-direction: column; /* Überschrift + Quadrat untereinander */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2e37b1;
+    gap: 20px;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255, 254, 254); /* Hintergrund des Quadrats */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#clickBtn {
+    font-size: 25px;
+    color: red;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: rgb(248, 248, 248);
+}
+
+/* html Seite 2 */
+
+body {
+    display: flex;
+    flex-direction: column; /* Überschrift + Quadrat untereinander */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2e37b1;
+    gap: 20px;
+}
+
+.square {
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0,2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 Spalten */
+  grid-template-rows: 1fr 1fr; /* 2 Reihen */
+  gap: 20px;
+}
+
+.dot {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.yellow { 
+  background-color: yellow;
+}
+
+  
+.red { 
+    background-color: red;
+  }
+
+  .blue { 
+  background-color: blue;
+}
+
+.green { 
+  background-color: green;
+  }
+
+  /* html Game */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2e37b1;
+    gap: 20px;
+}
+    
+
+.title {
+	color: #228B22;
+	font-family: Candara;
+}
+

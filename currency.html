@@ -1,0 +1,129 @@
+<!--Währungsrechner-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+<title>Währungsrechner</title>
+
+<!--CSS-->
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #2e37b1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.converter-container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: black;
+}
+
+.converter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, select, button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#result {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #333;
+}
+</style>
+
+<!--Java Script-->
+<script>
+
+    function convertCurrency() {
+  const amount = parseFloat(document.getElementById("amount").value);
+  const from = document.getElementById("fromCurrency").value;
+  const to = document.getElementById("toCurrency").value;
+  const resultField = document.getElementById("result");
+
+  if (isNaN(amount)) {
+    resultField.textContent = "❗ Bitte einen gültigen Betrag eingeben.";
+    return;
+  }
+
+  // ✨ Beispielhafte feste Umrechnungskurse (du kannst sie später aktualisieren!)
+  const rates = {
+    EUR: { USD: 1.08, GBP: 0.86 },
+    USD: { EUR: 0.93, GBP: 0.80 },
+    GBP: { EUR: 1.16, USD: 1.25 }
+  };
+
+  if (from === to) {
+    resultField.textContent = `${amount.toFixed(2)} ${to}`;
+    return;
+  }
+
+  const rate = rates[from][to];
+  const converted = amount * rate;
+
+  resultField.textContent = `${amount.toFixed(2)} ${from} = ${converted.toFixed(2)} ${to}`;
+}
+</script>
+
+</head>
+
+<body>
+  <div class="converter-container">
+    <h1>💱Währungsrechner</h1>
+    
+    <div class="converter-box">
+      <input type="number" id="amount" placeholder="Betrag eingeben" />
+
+      <select id="fromCurrency">
+        <option value="EUR">EUR - Euro</option>
+        <option value="USD">USD - US-Dollar</option>
+        <option value="GBP">GBP - Pfund</option>
+      </select>
+
+      <span>➡️</span>
+
+      <select id="toCurrency">
+        <option value="USD">USD - US-Dollar</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="GBP">GBP - Pfund</option>
+      </select>
+
+      <button onclick="convertCurrency()">Umrechnen</button>
+
+      <p id="result"></p>
+    </div>
+  </div>
+
+</body>
+</html>
